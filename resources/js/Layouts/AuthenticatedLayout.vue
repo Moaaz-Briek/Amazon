@@ -22,7 +22,6 @@ const accountAndListFunc = (bool) => {
 </script>
 <template>
     <div class="min-w-[1150px] bg-gray-100 h-full">
-
         <div v-if="accountAndList" class="top-0 z-20 fixed w-full h-full bg-black bg-opacity-70"></div>
         <!--NavBar-->
         <div class="flex items-center bg-gray-900 h-[60px] py-2 fixed z-50 min-w-[1150px] w-full">
@@ -30,7 +29,7 @@ const accountAndListFunc = (bool) => {
             <div class="flex">
                 <Link
                     class="text-white h-[50px] p-2 border-[1px] border-gray-900 rounded-sm hover:border-gray-100 cursor-pointer">
-                    AMAZON
+                    <img width="100" src="/images/logo/AMAZON_LOGO.png" alt="">
                 </Link>
             </div>
 
@@ -66,7 +65,7 @@ const accountAndListFunc = (bool) => {
             <div class="flex">
                 <div class="h-[50px] p-2 border-[1px] border-gray-900 rounded-sm hover:border-gray-100 cursor-pointer">
                     <div class="flex items-center justify-center mt-2.5 px-1">
-                        <img src="https://www.placeholder.com/35x20" alt="">
+                        <img width="23"  class="mb-3 mr-1" src="/images/flags/US.png" alt="">
                         <div class="text-[15px] text-white -mt-2 -mr-0.5 font-extrabold">EN</div>
                         <MenuDownIcon fill-color="#c2c2c2" class="-mr-4 -mt-1.5 pr-1" :size="20"/>
                     </div>
