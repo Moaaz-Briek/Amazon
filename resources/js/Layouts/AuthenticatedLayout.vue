@@ -14,8 +14,8 @@ let showMenu = ref(false)
 let accountAndList = ref(false)
 
 const accountAndListFunc = (bool) => {
-    setTimeout( () => {
-      accountAndList.value = bool
+    setTimeout(() => {
+        accountAndList.value = bool
     }, 150)
 }
 
@@ -50,13 +50,15 @@ const accountAndListFunc = (bool) => {
             </div>
 
             <div class="flex grow items-center h-[45px] px-1">
-                <div class="flex items-center justify-center bg-gray-100 border-r border-r-gray-300 font-extrabold text-[11px] text-gray-600 w-[60px] h-[40px] rounded-l-md cursor-pointer">
+                <div
+                    class="flex items-center justify-center bg-gray-100 border-r border-r-gray-300 font-extrabold text-[11px] text-gray-600 w-[60px] h-[40px] rounded-l-md cursor-pointer">
                     <div class="pt-[3px]">
                         All
                     </div>
                     <MenuDownIcon fill-color="#5E5E5E" class="-mr-2" :size="20"/>
                 </div>
-                <input type="text" class="block w-full border-none border-transparent focus:border-transparent focus:ring-0">
+                <input type="text"
+                       class="block w-full border-none border-transparent focus:border-transparent focus:ring-0">
                 <div class="cursor-pointer bg-orange-300 p-[5px] px-2 rounded-r-md">
                     <MagnifyIcon :size="30"/>
                 </div>
@@ -65,12 +67,13 @@ const accountAndListFunc = (bool) => {
             <div class="flex">
                 <div class="h-[50px] p-2 border-[1px] border-gray-900 rounded-sm hover:border-gray-100 cursor-pointer">
                     <div class="flex items-center justify-center mt-2.5 px-1">
-                        <img width="23"  class="mb-3 mr-1" src="/images/flags/US.png" alt="">
+                        <img width="23" class="mb-3 mr-1" src="/images/flags/US.png" alt="">
                         <div class="text-[15px] text-white -mt-2 -mr-0.5 font-extrabold">EN</div>
                         <MenuDownIcon fill-color="#c2c2c2" class="-mr-4 -mt-1.5 pr-1" :size="20"/>
                     </div>
                 </div>
-                <div @mouseenter="accountAndListFunc(true)" @mouseleave="accountAndListFunc(false)" class="h-[50px] p-2 border-[1px] border-gray-900 rounded-sm hover:border-gray-100 cursor-pointer">
+                <div @mouseenter="accountAndListFunc(true)" @mouseleave="accountAndListFunc(false)"
+                     class="h-[50px] p-2 border-[1px] border-gray-900 rounded-sm hover:border-gray-100 cursor-pointer">
                     <div class="flex justify-center items-center">
                         <div>
                             <div class="text-[12px] text-white font-extrabold">
@@ -84,13 +87,15 @@ const accountAndListFunc = (bool) => {
                         </div>
                     </div>
 
-                    <div v-if="accountAndList" class="bg-white absolute z-50 top-[56px] -ml-[230px] w-[480px] rounded-sm px-6">
+                    <div v-if="accountAndList"
+                         class="bg-white absolute z-50 top-[56px] -ml-[230px] w-[480px] rounded-sm px-6">
                         <div>
                             <div class="flex justify-between py-2.5 border-b">
                                 <div class="text-sm p-2">
                                     Who's shopping? Select a profile.
                                 </div>
-                                <div class="flex items-center text-sm font-bold text-teal-600 hover:text-red-600 hover:underline">
+                                <div
+                                    class="flex items-center text-sm font-bold text-teal-600 hover:text-red-600 hover:underline">
                                     Manage Profile
                                     <ChevronRightIcon :size="20" fillColor="#808080"/>
                                 </div>
@@ -111,8 +116,8 @@ const accountAndListFunc = (bool) => {
                                         <div class="font-extrabold pt-3">
                                             Your Account
                                         </div>
-                                        <div class="text-sm hover:text-red-600 hover:underline pt-3"> Account </div>
-                                        <div class="text-sm hover:text-red-600 hover:underline pt-3"> Sign Out </div>
+                                        <div class="text-sm hover:text-red-600 hover:underline pt-3"> Account</div>
+                                        <div class="text-sm hover:text-red-600 hover:underline pt-3"> Sign Out</div>
                                     </div>
                                 </div>
                             </div>
@@ -122,14 +127,15 @@ const accountAndListFunc = (bool) => {
                 <div class="h-[50px] p-2 border-[1px] border-gray-900 rounded-sm hover:border-gray-100 cursor-pointer">
                     <div class="flex justify-center items-center">
                         <div>
-                            <div class="text-[12px] text-white font-extrabold"> Returns </div>
+                            <div class="text-[12px] text-white font-extrabold"> Returns</div>
                             <div class="flex items-center">
                                 <div class="text-[15px] text-white -mt-2 font-extrabold">& Orders</div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="relative h-[50px] p-2 mr-0.5 border-[1px] border-gray-900 rounded-sm hover:border-gray-100 cursor-pointer">
+                <div
+                    class="relative h-[50px] p-2 mr-0.5 border-[1px] border-gray-900 rounded-sm hover:border-gray-100 cursor-pointer">
                     <span class="absolute text-center right-[21px] w-[14px] -top-0 rounded-full text-[20px]">
                         <div class="text-orange-400 font-extrabold bg-gray-900 h-[16px]"> 0 </div>
                     </span>
@@ -141,42 +147,49 @@ const accountAndListFunc = (bool) => {
         </div>
 
         <!--Second Navigation-->
-        <div class="flex items-center justify-between bg-[#232f3e] h-[38px] fixed z-40 min-w-[1150px] w-full mt-[60px]" >
+        <div class="flex items-center justify-between bg-[#232f3e] h-[38px] fixed z-40 min-w-[1150px] w-full mt-[60px]">
             <div class="flex">
-                <div class="flex h-[30px] border-[1px] border-[#232f3e] rounded-sm hover:border-[1px] hover:border-gray-100 cursor-pointer">
+                <div
+                    class="flex h-[30px] border-[1px] border-[#232f3e] rounded-sm hover:border-[1px] hover:border-gray-100 cursor-pointer">
                     <div @click="showMenu = true" class="flex items-center justify-between px-2">
                         <MenuIcon fillColor="#F5F5F5" :size="26" class="mr-0.5"/>
                         <div class="text-[14px] text-white font-extrabold">All</div>
                     </div>
                 </div>
-                <div class="flex h-[30px] border-[1px] border-[#232f3e] rounded-sm hover:border-[1px] hover:border-gray-100 cursor-pointer">
+                <div
+                    class="flex h-[30px] border-[1px] border-[#232f3e] rounded-sm hover:border-[1px] hover:border-gray-100 cursor-pointer">
                     <div class="flex items-center justify-between px-2">
                         <div class="text-[14px] text-white font-extrabold">Today's Deals</div>
                     </div>
                 </div>
-                <div class="flex h-[30px] border-[1px] border-[#232f3e] rounded-sm hover:border-[1px] hover:border-gray-100 cursor-pointer">
+                <div
+                    class="flex h-[30px] border-[1px] border-[#232f3e] rounded-sm hover:border-[1px] hover:border-gray-100 cursor-pointer">
                     <div class="flex items-center justify-between px-2">
                         <div class="text-[14px] text-white font-extrabold">Gift Cards</div>
                     </div>
                 </div>
-                <div class="flex h-[30px] border-[1px] border-[#232f3e] rounded-sm hover:border-[1px] hover:border-gray-100 cursor-pointer">
+                <div
+                    class="flex h-[30px] border-[1px] border-[#232f3e] rounded-sm hover:border-[1px] hover:border-gray-100 cursor-pointer">
                     <div class="flex items-center justify-between px-2">
                         <div class="text-[14px] text-white font-extrabold">Buy Again</div>
                     </div>
                 </div>
-                <div class="flex h-[30px] border-[1px] border-[#232f3e] rounded-sm hover:border-[1px] hover:border-gray-100 cursor-pointer">
+                <div
+                    class="flex h-[30px] border-[1px] border-[#232f3e] rounded-sm hover:border-[1px] hover:border-gray-100 cursor-pointer">
                     <div class="flex items-center justify-between px-2">
                         <div class="text-[14px] text-white font-extrabold">Customer Service</div>
                     </div>
                 </div>
-                <div class="flex h-[30px] border-[1px] border-[#232f3e] rounded-sm hover:border-[1px] hover:border-gray-100 cursor-pointer">
+                <div
+                    class="flex h-[30px] border-[1px] border-[#232f3e] rounded-sm hover:border-[1px] hover:border-gray-100 cursor-pointer">
                     <div class="flex items-center justify-between px-2">
                         <div class="text-[14px] text-white font-extrabold">Moaaz's Amazon.co</div>
                     </div>
                 </div>
             </div>
             <div class="flex">
-                <div class="flex h-[30px] border-[1px] border-[#232f3e] rounded-sm hover:border-[1px] hover:border-gray-100 cursor-pointer">
+                <div
+                    class="flex h-[30px] border-[1px] border-[#232f3e] rounded-sm hover:border-[1px] hover:border-gray-100 cursor-pointer">
                     <div class="flex items-center justify-between px-2">
                         <div class="text-[14px] text-white font-extrabold">Holiday Fashion Deals</div>
                     </div>
@@ -190,19 +203,25 @@ const accountAndListFunc = (bool) => {
             </div>
         </main>
 
-        <div class="w-full bg-white mt-10">
+<!--        products section-->
+        <div class="w-full bg-white mt-10 overflow-x-scroll">
             <div class="max-w-[1500px] mx-auto">
-                <div class="text-[23px] pt-4 font-extrabold">Recommened based on your shopping trends</div>
+                <div class="text-[23px] pt-4 font-extrabold">Recommended based on your shopping trends</div>
                 <div class="flex justify-center items-stretch">
-                    <div class="p-4 text-center mx-auto">
-                        <div class="w-[158px] h-[150px] overflow-hidden">
-                            <img src="https://www.placeholder.com/150x150" alt="">
-                        </div>
-                        <div class="2-[160px] text-[12px] py-2 text-teal-600 font-extrabold hover:text-red-600 cursor-pointer">
-                            This is a test title
-                        </div>
-                        <div class="flex justify-start">
-                            <div class="text-xs font-extrabold text-red-600 w-full text-left">$99.99</div>
+                    <div v-for="product in $page.props.random_products" :key="product">
+                        <div class="p-4 text-center mx-auto">
+                            <div class="w-[158px] h-[150px] overflow-hidden">
+                                <img :src="product.image" alt="">
+                            </div>
+                            <div class="2-[160px] text-[12px] py-2 text-teal-600 font-extrabold hover:text-red-600 cursor-pointer">
+                                {{ product.title.substring(0, 40) }}...
+                            </div>
+                            <div class="flex justify-start">
+                                <div class="text-xs font-extrabold text-red-600 w-full text-left">
+                                    ${{ product.price }}
+                                </div>
+                                <img width="50" src="/images/logo/PRIME_LOGO.png" alt="">
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -210,7 +229,8 @@ const accountAndListFunc = (bool) => {
         </div>
 
         <footer class="bg-[#232F3E]">
-            <div class="bg-[#37475A] hover:bg-gray-600 w-full p-3.5 cursor-pointer text-white font-extrabold text-center">
+            <div
+                class="bg-[#37475A] hover:bg-gray-600 w-full p-3.5 cursor-pointer text-white font-extrabold text-center">
                 Back to Top
             </div>
             <div class="flex item-stretch justify-between max-w-[1000px] mx-auto p-10 text-white">
@@ -257,7 +277,7 @@ const accountAndListFunc = (bool) => {
         </footer>
     </div>
 
-<!--    side menu-->
+    <!--    side menu-->
     <div
         v-if="showMenu"
         class="top-0 z-50 fixed w-full h-full bg-black bg-opacity-70"
@@ -281,11 +301,16 @@ const accountAndListFunc = (bool) => {
             <div class="font-extrabold text-[16px] pt-3 pb-1 pl-6 pr-3 text-black">
                 Shop By Department
             </div>
-            <div class="hover:bg-gray-200 pl-6 pr-3">
-                <div class="py-2.5 text-[13px] text-black flex justify-between items-center hover:bg-gray-200 cursor-pointer">
-                    Computers <ChevronRightIcon :size="20" fillColor="#808080"/>
+            <div v-for="cat in $page.props.categories" :key="cat">
+                <div class="hover:bg-gray-200 pl-6 pr-3">
+                    <Link href="/"
+                          class="py-2.5 text-[13px] text-black flex justify-between items-center hover:bg-gray-200 cursor-pointer">
+                        {{ cat.name }}
+                        <ChevronRightIcon :size="20" fillColor="#808080"/>
+                    </Link>
                 </div>
             </div>
+
         </div>
     </div>
 </template>
