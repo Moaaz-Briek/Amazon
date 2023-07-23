@@ -22,7 +22,7 @@ import {Head} from '@inertiajs/vue3';
             <!-- Show Products-->
             <div class="grid grid-cols-3 gap-1">
                 <div v-for="product in $page.props.category_products" :key="product" class="m-1">
-
+                    <ProductComponent :product="product"/>
                 </div>
             </div>
         </div>
