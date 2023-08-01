@@ -1,5 +1,4 @@
 <script setup>
-import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
 import {Link} from '@inertiajs/vue3';
 import {toRefs} from 'vue';
 
@@ -9,7 +8,7 @@ const { product } = toRefs(props)
 
 <template>
     <div class="border border-gray-300 rounded-md bg-white p-1.5">
-        <Link href="/" class="w-full">
+        <Link :href="route('product.index', {id: product.id})" class="w-full">
             <img :src="product.image" class="rounded-md" alt="">
             <div class="text-left">
                 <div class="text-[16px] text-gray-900 font-extrabold cursor-pointer">
