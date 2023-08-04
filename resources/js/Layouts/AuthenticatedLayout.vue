@@ -28,6 +28,7 @@ const accountAndListFunc = (bool) => {
 
             <div class="flex">
                 <Link
+                    :href="route('dashboard')"
                     class="text-white h-[50px] p-2 border-[1px] border-gray-900 rounded-sm hover:border-gray-100 cursor-pointer">
                     <img width="100" src="/images/logo/AMAZON_LOGO.png" alt="">
                 </Link>
@@ -35,20 +36,32 @@ const accountAndListFunc = (bool) => {
 
             <div
                 class="text-white h-[50px] p-2 border-[1px] border-gray-900 rounded-sm hover:border-gray-100 cursor-pointer">
-                    <Link :href="route('address.index')">
+                    <Link v-if="$page.props.auth.user"
+                        :href="route('address.index')">
                         <div class="flex items-center justify-center">
                             <MapMarkerOutlineIcon class="pt-2 -ml-1" fillColor="#f5f5f5"/>
                             <div>
                                 <div class="text-[13px] text-gray-300 font-extrabold">
-                                    <div>Delivery to Moaaz</div>
+                                    <div>Delivery to {{ $page.props.auth.user.first_name }}</div>
                                 </div>
 
-                                <div class="text-[15px] text-white -mt-1.5 font-extrabold">
-                                    <div>Egypt</div>
+                                <div v-if="$page.props.auth.address" class="text-[15px] text-white -mt-1.5 font-extrabold">
+                                    <div>{{ $page.props.auth.address.city }} {{ $page.props.auth.address.postcode }}</div>
                                 </div>
                             </div>
                         </div>
                     </Link>
+                <div v-else class="flex items-center justify-center">
+                    <MapMarkerOutlineIcon class="pt-2 -ml-1" fillColor="#f5f5f5"/>
+                    <div>
+                        <div class="text-[13px] text-gray-300 font-extrabold">
+                            Hello
+                            <div class="text-[15px] text-white -mt-1.5 font-extrabold">
+                                Select Your Address
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <div class="flex grow items-center h-[45px] px-1">
@@ -80,7 +93,8 @@ const accountAndListFunc = (bool) => {
                         <div>
                             <div class="text-[12px] text-white font-extrabold">
                                 Hello,
-                                <span>Sign In</span>
+                                <span v-if="$page.props.auth.user">{{ $page.props.auth.user.first_name }}</span>
+                                <span v-else>Sign In</span>
                             </div>
                             <div class="flex items-center">
                                 <div class="text-[15px] text-white -mt-2 font-extrabold">Account & List</div>
@@ -91,7 +105,7 @@ const accountAndListFunc = (bool) => {
 
                     <div v-if="accountAndList"
                          class="bg-white absolute z-50 top-[56px] -ml-[230px] w-[480px] rounded-sm px-6">
-                        <div>
+                        <div v-if="$page.props.auth.user">
                             <div class="flex justify-between py-2.5 border-b">
                                 <div class="text-sm p-2">
                                     Who's shopping? Select a profile.
@@ -118,10 +132,38 @@ const accountAndListFunc = (bool) => {
                                         <div class="font-extrabold pt-3">
                                             Your Account
                                         </div>
-                                        <div class="text-sm hover:text-red-600 hover:underline pt-3"> Account</div>
-                                        <div class="text-sm hover:text-red-600 hover:underline pt-3"> Sign Out</div>
+                                        <Link
+                                            :href="route('profile.edit')"
+                                            class="text-sm block hover:text-red-600 hover:underline pt-3">
+                                            Account
+                                        </Link>
+                                        <Link
+                                            :href="route('logout')"
+                                            method="POST"
+                                            as="button"
+                                            class="text-sm block hover:text-red-600 hover:underline pt-3">
+                                            Sign Out
+                                        </Link>
                                     </div>
                                 </div>
+                            </div>
+                        </div>
+                        <div v-else class="p-4 text-center">
+                            <div></div>
+                            <Link
+                                :href="route('login')"
+                                class="text-center items-center px-20 py-1.5 bg-[#fcba1f] border-gray-600 rounded-lg text-sm font-extrabold text-black"
+                            >
+                                Sign In
+                            </Link>
+                            <div class="text-sm pt-4">
+                                New Customer?
+                                <Link
+                                    :href="route('register')"
+                                    class="text-blue-700 hover:text-red-700"
+                                >
+                                    Start here.
+                                </Link>
                             </div>
                         </div>
                     </div>
