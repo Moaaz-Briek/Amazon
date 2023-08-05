@@ -77,7 +77,6 @@ const totalWithoutDot = () => {
                 <Link
                     :disabled="Number(total) === 0.00"
                     :class="Number(total) === 0.00 ? 'bg-gray-400' : 'bg-yellow-400 hover:bg-yellow-500'"
-                    method="POST"
                     as="button"
                     :href="$page.props.auth.user !== null ? route('checkout.index', {total: totalWithoutDot(), total_decimal: total, items: cart}) : route('login')"
                     class="block mt-4 w-full text-center py-1 font-bold text-sm rounded-lg border shadow-sm cursor-pointer">

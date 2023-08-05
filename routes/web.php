@@ -3,6 +3,7 @@
 use App\Http\Controllers\AddressController;
 use App\Http\Controllers\AddressOptionsController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -32,6 +33,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/address_options', [AddressOptionsController::class, 'index'])->name('address_options.index');
     Route::post('/address_options', [AddressOptionsController::class, 'store'])->name('address_options.store');
     Route::delete('/address_options/{id}', [AddressOptionsController::class, 'destroy'])->name('address_options.destroy');
+    Route::get('/checkout', [CheckoutController::class, 'index'])->name('checkout.index');
 
 });
 
