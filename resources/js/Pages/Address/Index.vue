@@ -40,7 +40,7 @@
                     <div>{{$page.props.auth.address.addr1}}</div>
                     <div>{{$page.props.auth.address.addr2}}</div>
                     <div>{{$page.props.auth.address.city}}</div>
-                    <div>{{$page.props.auth.address.postcode}}</div>
+                    <div>{{$page.props.auth.address.postCode}}</div>
                     <div>{{$page.props.auth.address.country}}</div>
                 </div>
                 <div class="px-4 absolute bottom-0 pb-4">
